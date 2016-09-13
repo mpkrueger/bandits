@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   belongs_to :family
   has_many :topics
+  has_many :invitations, class_name: "Invite", foreign_key: 'recipient_id'
+  has_many :sent_invites, class_name: "Invite", foreign_key: 'sender_id'
 end

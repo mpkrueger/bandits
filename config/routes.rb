@@ -1,21 +1,16 @@
 Rails.application.routes.draw do
-  get 'comments/index'
 
-  get 'comments/new'
+  get 'invites/new'
 
-  get 'comments/show'
+  get 'families/invite'
 
-  get 'comments/edit'
+  resources :topics
+  resources :comments
+  resources :invites
 
-  get 'topics/index'
-
-  get 'topics/new'
-
-  get 'topics/show'
-
-  get 'topics/edit'
-
-  devise_for :users
+  devise_for :users, controllers: {
+  	registrations: 'users/registrations'
+  }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: 'dashboard#index'

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  token: MyString
+  family: one
+  sender: one
+  recipient: one
+
+two:
+  email: MyString
+  token: MyString
+  family: two
+  sender: two
+  recipient: two

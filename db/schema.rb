@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160913173719) do
+ActiveRecord::Schema.define(version: 20160913174242) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
@@ -23,6 +23,17 @@ ActiveRecord::Schema.define(version: 20160913173719) do
   create_table "families", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "invites", force: :cascade do |t|
+    t.string   "email"
+    t.string   "token"
+    t.integer  "family_id"
+    t.integer  "sender_id"
+    t.integer  "recipient_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["family_id"], name: "index_invites_on_family_id"
   end
 
   create_table "topics", force: :cascade do |t|

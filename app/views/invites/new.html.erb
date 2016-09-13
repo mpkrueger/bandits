@@ -1,0 +1,7 @@
+<h1>Invites#new</h1>
+<p>Find me in app/views/invites/new.html.erb</p>
+<%= form_for @invite do |f| %>
+	<%= f.hidden_field :family_id, value: @invite.family_id %>
+	<%= f.email_field :email, placeholder: "email" %>
+	<%= f.submit "Send invite" %>
+<% end %>
