@@ -5,10 +5,14 @@ class InviteMailer < ApplicationMailer
   #
   #   en.invite_mailer.new_user_invite.subject
   #
-  def new_user_invite
-    @greeting = "Hi"
+  def new_user_invite(invite)
 
-    mail to: "to@example.org"
+    @greeting = "Hi"
+    @invite = invite
+
+    mail to: @invite.email
+
+    @new_reg_url = new_user_registration_url(:invite_token => @invite.token)
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
