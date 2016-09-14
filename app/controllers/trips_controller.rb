@@ -20,7 +20,9 @@ class TripsController < ApplicationController
     @goal_id = @goal.id
     @total_cost = @trip.flight_cost + (@trip.hotel_cost * @trip.duration) + (@trip.fun_cost * @trip.duration)
     @comment = Comment.new
-    @comments = @trip.goal.comments
+    @comments = @goal.comments
+    @to_do = ToDo.new
+    @to_dos = @goal.to_dos
   end
 
   def edit

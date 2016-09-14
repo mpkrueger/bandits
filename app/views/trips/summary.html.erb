@@ -7,12 +7,22 @@
 <p>Estimated fun cost: <%= @trip.fun_cost %></p>
 <p>Total estimated cost: <%= @total_cost %></p>
 
+<h2>To Dos</h2>
+<div class="new-to_do">
+	<%= render partial: 'to_dos/form' %>
+</div>
+<div class="js-to_dos">
+	<% @to_dos.each do |to_do| %>
+		<%= render partial: 'to_dos/to_do', locals: { to_do: to_do } %>
+	<% end %>
+</div>
+
 <h2>Comments</h2>
+<div class="new-comment">
+	<%= render partial: 'comments/form' %>
+</div>
 <div class="js-comments">
 	<% @comments.each do |comment| %>
 		<%= render partial: 'comments/comment', locals: { comment: comment } %>
 	<% end %>
-</div>
-<div class="new-comment">
-	<%= render partial: 'comments/form' %>
 </div>

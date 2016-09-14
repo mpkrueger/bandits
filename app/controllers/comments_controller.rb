@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
   	@comment.user = current_user
     @comment.goal = Goal.find_by_id(params[:comment][:goal_id].to_i)
   	if @comment.save
-  		flash[:notice] = "saved"
+  		
   	else
   		flash[:error] = "uh oh"
   	end
