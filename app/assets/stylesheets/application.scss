@@ -42,6 +42,7 @@ body{
     font-family: Helvetica, sans-serif;
     font-weight: 300;
     color:#444;
+    padding:0 10px;
 }
 
 .main-content{
@@ -70,31 +71,34 @@ input[type="tel"]{
 	width: 80px;
 }
 
-a { color:#EFB033;}
-a:hover{ color: #EFB033; text-decoration: none;}
-a:focus { color: #EFB033; text-decoration: underline;}
+a { color:#00A99D;}
+a:hover{ color: #00A99D; text-decoration: none;}
+a:focus { color: #00A99D; text-decoration: underline;}
 
-
+.button-row{
+	margin-bottom:20px;
+}
 .next-button{
-  border: 1px solid #444;
-  background-color: transparent;
-  color:#444;
+  border: 1px solid #00A99D;
+  background-color: #00A99D;
+  color:#FFF;
   padding:10px;
   text-align: center;
   border-radius:4px;
   margin: auto;
+  width:50%;
 }
 
 .next-button:active{
-    background-color: #444;
-    color: #43767A;
+    background-color: #00897C;
+    color: #fff;
     border: none;
     border: 1px solid #FFFFFF;
 }
 
 .next-button:disabled{
     background-color: #444;
-    color: #43767A;
+    color: #fff;
     border: none;
     border: 1px solid #FFFFFF;
     opacity:0.5;
@@ -103,4 +107,20 @@ a:focus { color: #EFB033; text-decoration: underline;}
 .padding-text {
     color: transparent;
     background-color: transparent;
+}
+
+h1{
+	font-size: 18px;
+	text-align:center;
+	margin-bottom:20px;
+}
+
+h2{
+	text-align:center;
+	margin-bottom:20px;
+}
+
+.centered{
+	text-align:center;
+	margin:auto;
 }
