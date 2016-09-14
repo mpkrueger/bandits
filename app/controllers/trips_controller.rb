@@ -23,6 +23,14 @@ class TripsController < ApplicationController
     @comments = @goal.comments
     @to_do = ToDo.new
     @to_dos = @goal.to_dos
+
+    # image search
+    @image_options = {}
+    @image_options[:searchType] = "image"
+    @image_options[:imgSize] = "xlarge"
+    @images = []
+    @results = GoogleCustomSearchApi.search(@trip.place, @image_options)
+    @images.push @results.items[rand(@results.items.size)].link
   end
 
   def edit
