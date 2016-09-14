@@ -12,7 +12,7 @@ class InviteMailer < ApplicationMailer
 
     mail to: @invite.email
 
-    @new_reg_url = new_user_registration_url(:invite_token => @invite.token)
+    # @new_reg_url = new_user_registration_url(:invite_token => @invite.token)
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml

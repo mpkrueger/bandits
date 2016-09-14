@@ -1,7 +1,7 @@
 <h1>Is this working</h1>
 
 <p>
-  <%= @new_reg_url %>
+  <%= link_to "Sign up", new_registration_url(:user, invite_token: @invite.token) %>
 </p>
 
 How about the above?

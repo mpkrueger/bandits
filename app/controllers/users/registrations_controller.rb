@@ -14,8 +14,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @token = params[:invite_token]
 
     if @token != nil
-      family = Invite.find_by_token(@token).family
-      resource.family.push(family)
+      @family = Invite.find_by_token(@token).family
+      resource.family = @family
     else
       @family = Family.new
       resource.family = @family
