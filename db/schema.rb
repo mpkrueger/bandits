@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160914032527) do
+ActiveRecord::Schema.define(version: 20160914172914) do
 
   create_table "colleges", force: :cascade do |t|
     t.integer  "goal_id"
@@ -29,8 +29,10 @@ ActiveRecord::Schema.define(version: 20160914032527) do
     t.datetime "updated_at", null: false
     t.text     "message"
     t.integer  "goal_id"
+    t.integer  "user_id"
     t.index ["goal_id"], name: "index_comments_on_goal_id"
     t.index ["topic_id"], name: "index_comments_on_topic_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "custom_goals", force: :cascade do |t|

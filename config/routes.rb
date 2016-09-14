@@ -11,7 +11,11 @@ Rails.application.routes.draw do
   resources :retirements
   resources :emergency_funds
   resources :houses
-  resources :trips
+  resources :trips do
+    member do
+      get 'summary'
+    end
+  end
   resources :colleges
   resources :to_dos
   resources :goals
