@@ -1,12 +1,48 @@
-<h1>Plan a trip</h1>
+<body class="page-background">
+<div class="heading">Propose a trip in 2017</div>
+
+<div class="main-content">
+<p>Let's get a sense of your trip plans so we can figure out how much you'll want to save up! (rough estimates are fine for now!)</p>
+
 
 <%= form_for @trip do |f| %>
-	<%= f.text_field :place, placeholder: "Where would you like to go?" %>
-	<%= f.telephone_field :duration, placeholder: "How many nights will you go for?" %>
-	
-	<%= f.date_field :date %>
-	<%= f.telephone_field :flight_cost, placeholder: "Estimated flight cost" %>
-	<%= f.telephone_field :hotel_cost, placeholder: "Estimated hotel cost" %>
-	<%= f.telephone_field :fun_cost, placeholder: "Estimated daily fun cost" %>
-	<%= f.submit "Save" %>
+<p class="question">
+Where do you want to go? <br />
+	<%= f.text_field :place, placeholder: "" %>
+
+</p>
+
+<p class="question">
+For how many nights?	<br />
+<%= f.telephone_field :duration, placeholder: "" %>
+</p>
+
+<p class="question">
+Which month are you thinking? <br />
+	<%= f.date_field :date%>
+</p>
+
+<p class="question">
+Take a quick look at <%= link_to "Google flights", "http://flights.google.com" %>. How much do you estimate for flights for both of you? <br />
+	$<%= f.telephone_field :flight_cost, placeholder: "" %>
+</p>
+
+<p class="question">
+How much do you think an average hotel night will cost? <br />
+	$<%= f.telephone_field :hotel_cost, placeholder: "" %>
+</p>
+
+<p class="question">
+How much do you want to budget for daily fun? (meals, tours, transit, etc.) <br />
+	$<%= f.telephone_field :fun_cost, placeholder: "" %>
+</p>
+
+	<%= f.submit "Next", class: 'next-button' %>
+	<div class="page-bottom-padding">
+		<div class="padding-text">
+			adding space below next button
+		</div>
+	</div>
 <% end %>
+</div>
+</body>
