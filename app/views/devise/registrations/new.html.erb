@@ -9,8 +9,13 @@
 
   <div class="centered">
     <div class="question">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autofocus: true %>
+    </div>
+
+    <div class="question">
       <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
+      <%= f.email_field :email %>
     </div>
 
     <div class="question">
