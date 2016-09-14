@@ -10,19 +10,70 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160913174242) do
+ActiveRecord::Schema.define(version: 20160914032527) do
+
+  create_table "colleges", force: :cascade do |t|
+    t.integer  "goal_id"
+    t.string   "kid_name"
+    t.integer  "kid_age"
+    t.integer  "cost_estimate"
+    t.decimal  "percentage_to_pay"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["goal_id"], name: "index_colleges_on_goal_id"
+  end
 
   create_table "comments", force: :cascade do |t|
-    t.text     "body"
     t.integer  "topic_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text     "message"
+    t.integer  "goal_id"
+    t.index ["goal_id"], name: "index_comments_on_goal_id"
     t.index ["topic_id"], name: "index_comments_on_topic_id"
+  end
+
+  create_table "custom_goals", force: :cascade do |t|
+    t.integer  "goal_id"
+    t.string   "description"
+    t.date     "date"
+    t.integer  "target_amount"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["goal_id"], name: "index_custom_goals_on_goal_id"
+  end
+
+  create_table "emergency_funds", force: :cascade do |t|
+    t.integer  "goal_id"
+    t.date     "date"
+    t.integer  "monthly_expenses"
+    t.integer  "num_months"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["goal_id"], name: "index_emergency_funds_on_goal_id"
   end
 
   create_table "families", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "goals", force: :cascade do |t|
+    t.integer  "family_id"
+    t.integer  "created_by_user_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["family_id"], name: "index_goals_on_family_id"
+  end
+
+  create_table "houses", force: :cascade do |t|
+    t.integer  "goal_id"
+    t.integer  "total_cost"
+    t.decimal  "down_payment_percent"
+    t.date     "date"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.index ["goal_id"], name: "index_houses_on_goal_id"
   end
 
   create_table "invites", force: :cascade do |t|
@@ -36,6 +87,25 @@ ActiveRecord::Schema.define(version: 20160913174242) do
     t.index ["family_id"], name: "index_invites_on_family_id"
   end
 
+  create_table "retirements", force: :cascade do |t|
+    t.integer  "goal_id"
+    t.date     "date"
+    t.integer  "monthly_expenses"
+    t.integer  "target_amount"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["goal_id"], name: "index_retirements_on_goal_id"
+  end
+
+  create_table "to_dos", force: :cascade do |t|
+    t.integer  "goal_id"
+    t.string   "item"
+    t.integer  "assignee"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["goal_id"], name: "index_to_dos_on_goal_id"
+  end
+
   create_table "topics", force: :cascade do |t|
     t.string   "title"
     t.string   "message"
@@ -45,6 +115,19 @@ ActiveRecord::Schema.define(version: 20160913174242) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_topics_on_user_id"
+  end
+
+  create_table "trips", force: :cascade do |t|
+    t.integer  "goal_id"
+    t.string   "place"
+    t.integer  "duration"
+    t.date     "date"
+    t.integer  "flight_cost"
+    t.integer  "hotel_cost"
+    t.integer  "fun_cost"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["goal_id"], name: "index_trips_on_goal_id"
   end
 
   create_table "users", force: :cascade do |t|

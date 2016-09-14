@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  goal: one
+  date: 2016-09-13
+  monthly_expenses: 1
+  target_amount: 1
+
+two:
+  goal: two
+  date: 2016-09-13
+  monthly_expenses: 1
+  target_amount: 1

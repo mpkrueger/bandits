@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  family: one
+  created_by_user_id: 1
+
+two:
+  family: two
+  created_by_user_id: 1
