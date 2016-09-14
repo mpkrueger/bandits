@@ -8,13 +8,19 @@ class TripsController < ApplicationController
   	@goal = Goal.new(family: current_user.family)
   	@trip.goal = @goal
   	if @trip.save
-  		redirect_to root_path
+  		redirect_to summary_trip_path(@trip)
   	else
   		flash[:error] = "uh oh"
   	end
   end
 
-  def show
+  def summary
+    @trip = Trip.find_by_id(params[:id])
+    @goal = @trip.goal
+    @goal_id = @goal.id
+    @total_cost = @trip.flight_cost + (@trip.hotel_cost * @trip.duration) + (@trip.fun_cost * @trip.duration)
+    @comment = Comment.new
+    @comments = @trip.goal.comments
   end
 
   def edit

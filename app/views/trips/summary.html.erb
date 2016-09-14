@@ -1,0 +1,18 @@
+<h1><%= @trip.place %></h1>
+
+<p>Trip Date: <%= @trip.date %></p>
+<p>Duration (# of nights): <%= @trip.duration %></p>
+<p>Estimated flight cost: <%= @trip.flight_cost %></p>
+<p>Estimated hotel cost: <%= @trip.hotel_cost %></p>
+<p>Estimated fun cost: <%= @trip.fun_cost %></p>
+<p>Total estimated cost: <%= @total_cost %></p>
+
+<h2>Comments</h2>
+<div class="js-comments">
+	<% @comments.each do |comment| %>
+		<%= render partial: 'comments/comment', locals: { comment: comment } %>
+	<% end %>
+</div>
+<div class="new-comment">
+	<%= render partial: 'comments/form' %>
+</div>
