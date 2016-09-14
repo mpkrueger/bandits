@@ -1,2 +1,12 @@
-<h1>Trips#new</h1>
-<p>Find me in app/views/trips/new.html.erb</p>
+<h1>Plan a trip</h1>
+
+<%= form_for @trip do |f| %>
+	<%= f.text_field :place, placeholder: "Where would you like to go?" %>
+	<%= f.telephone_field :duration, placeholder: "How many nights will you go for?" %>
+	
+	<%= f.date_field :date %>
+	<%= f.telephone_field :flight_cost, placeholder: "Estimated flight cost" %>
+	<%= f.telephone_field :hotel_cost, placeholder: "Estimated hotel cost" %>
+	<%= f.telephone_field :fun_cost, placeholder: "Estimated daily fun cost" %>
+	<%= f.submit "Save" %>
+<% end %>

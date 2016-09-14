@@ -1,22 +1,22 @@
 <h1>Welcome to Savvy</h1>
 
-
-<% if @family_members < 2 %>
-	<%= link_to "Invite your partner!", new_invite_path %>
-<% end %>
-
-<% if @family_goals != nil %>
-	<p><%= link_to "Our goals", goals_path %></p>
-<% end %>
-
-Set a new goal:
-<p><%= link_to "Plan for a trip", new_trip_path %></p>
-<p><%= link_to "Buy a house", new_house_path %></p>
-<p><%= link_to "Create an emergency fund", new_emergency_fund_path %></p>
-<p><%= link_to "Save for retirement", new_retirement_path %></p>
-<p><%= link_to "Save for your child's college", new_college_path %></p>
-
 <% if current_user %>
+	<% if @family_members < 2 %>
+		<%= link_to "Invite your partner!", new_invite_path %>
+	<% end %>
+
+	<% if @family_goals != nil %>
+		<p><%= link_to "Our goals", goals_path %></p>
+	<% end %>
+
+	Set a new goal:
+	<p><%= link_to "Plan for a trip", new_trip_path %></p>
+	<p><%= link_to "Buy a house", new_house_path %></p>
+	<p><%= link_to "Create an emergency fund", new_emergency_fund_path %></p>
+	<p><%= link_to "Save for retirement", new_retirement_path %></p>
+	<p><%= link_to "Save for your child's college", new_college_path %></p>
+
+
 	<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
 <% else %>
 	<%= link_to "Sign up", new_user_registration_path %>
