@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160914172914) do
+ActiveRecord::Schema.define(version: 20160914202011) do
 
   create_table "colleges", force: :cascade do |t|
     t.integer  "goal_id"
@@ -105,7 +105,9 @@ ActiveRecord::Schema.define(version: 20160914172914) do
     t.integer  "assignee"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
     t.index ["goal_id"], name: "index_to_dos_on_goal_id"
+    t.index ["user_id"], name: "index_to_dos_on_user_id"
   end
 
   create_table "topics", force: :cascade do |t|
