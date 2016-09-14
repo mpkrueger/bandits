@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  goal: one
+  kid_name: MyString
+  kid_age: 1
+  cost_estimate: 1
+  percentage_to_pay: 9.99
+
+two:
+  goal: two
+  kid_name: MyString
+  kid_age: 1
+  cost_estimate: 1
+  percentage_to_pay: 9.99

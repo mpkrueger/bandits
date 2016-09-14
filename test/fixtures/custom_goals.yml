@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  goal: one
+  description: MyString
+  date: 2016-09-13
+  target_amount: 1
+
+two:
+  goal: two
+  description: MyString
+  date: 2016-09-13
+  target_amount: 1

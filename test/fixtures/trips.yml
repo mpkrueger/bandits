@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  goal: one
+  place: MyString
+  duration: 1
+  date: 2016-09-13
+  flight_cost: 1
+  hotel_cost: 1
+  fun_cost: 1
+
+two:
+  goal: two
+  place: MyString
+  duration: 1
+  date: 2016-09-13
+  flight_cost: 1
+  hotel_cost: 1
+  fun_cost: 1

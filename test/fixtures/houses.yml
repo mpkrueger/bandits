@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  goal: one
+  total_cost: 1
+  down_payment_percent: 9.99
+  date: 2016-09-13
+
+two:
+  goal: two
+  total_cost: 1
+  down_payment_percent: 9.99
+  date: 2016-09-13
