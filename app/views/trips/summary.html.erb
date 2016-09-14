@@ -1,28 +1,47 @@
-<h1><%= @trip.place %></h1>
-
-<p>Trip Date: <%= @trip.date %></p>
-<p>Duration (# of nights): <%= @trip.duration %></p>
-<p>Estimated flight cost: <%= @trip.flight_cost %></p>
-<p>Estimated hotel cost: <%= @trip.hotel_cost %></p>
-<p>Estimated fun cost: <%= @trip.fun_cost %></p>
-<p>Total estimated cost: <%= @total_cost %></p>
-
-<h2>To Dos</h2>
-<div class="new-to_do">
-	<%= render partial: 'to_dos/form' %>
-</div>
-<div class="js-to_dos">
-	<% @to_dos.each do |to_do| %>
-		<%= render partial: 'to_dos/to_do', locals: { to_do: to_do } %>
-	<% end %>
+<body>
+<div class="heading">TRIP TO <%= @trip.place.upcase %>
+	<br /><%= @trip.date.strftime("%B").upcase %> 2017
+	<br /><%= @trip.duration %>-day trip
 </div>
 
-<h2>Comments</h2>
-<div class="new-comment">
-	<%= render partial: 'comments/form' %>
+<div class="centered main-content">
+	<div class="section-header">ESTIMATED COSTS </div>
+	<p class="big-cost">$<%= @total_cost %></p>
+
+	<div class="row">
+		<div class="left-column-2">Flights:</div>
+		<div class="right-column-2">$<%= @trip.flight_cost %></div>
+	</div>
+
+	<div class="row">
+		<div class="left-column-2">Hotels: </div>
+		<div class="right-column-2">$<%= @trip.hotel_cost %>/night</div>
+	</div>
+
+	<div class="row">
+		<div class="left-column-2">Daily Fun: </div>
+		<div class="right-column-2">$<%= @trip.fun_cost %>/day</div>
+	</div>
+
+	<div class="section-header">TO-DOS </div>
+	<p> You can add to this later, but feel free to start jotting down tasks </p>
+	<div class="new-to_do">
+		<%= render partial: 'to_dos/form' %>
+	</div>
+	<div class="js-to_dos">
+		<% @to_dos.each do |to_do| %>
+			<%= render partial: 'to_dos/to_do', locals: { to_do: to_do } %>
+		<% end %>
+	</div>
+
+	<div class="section-header">COMMENTS </div>
+	<div class="new-comment">
+		<%= render partial: 'comments/form' %>
+	</div>
+	<div class="js-comments">
+		<% @comments.each do |comment| %>
+			<%= render partial: 'comments/comment', locals: { comment: comment } %>
+		<% end %>
+	</div>
 </div>
-<div class="js-comments">
-	<% @comments.each do |comment| %>
-		<%= render partial: 'comments/comment', locals: { comment: comment } %>
-	<% end %>
-</div>
+</body>

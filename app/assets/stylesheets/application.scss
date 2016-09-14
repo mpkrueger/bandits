@@ -42,7 +42,6 @@ body{
     font-family: Helvetica, sans-serif;
     font-weight: 300;
     color:#444;
-    padding:0 10px;
 }
 
 .main-content{
@@ -83,6 +82,11 @@ a:focus { color: #00A99D; text-decoration: underline;}
 .button-row{
 	margin-bottom:20px;
 }
+
+.row{
+	margin-bottom:5px;
+}
+
 .next-button{
   border: 1px solid #00A99D;
   background-color: #00A99D;
@@ -118,6 +122,7 @@ h1{
 	font-size: 18px;
 	text-align:center;
 	margin-bottom:20px;
+	line-height:1.4;
 }
 
 h2{

@@ -1,3 +1,39 @@
 // Place all the styles related to the Goals controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.big-cost{
+	font-size:24px;
+	font-weight:500;
+}
+
+.section-header{
+	margin-top:40px;
+	font-size:20px;
+}
+
+
+.left-column-2{
+	text-align: right;
+	width:50%;
+	padding-left:15px;
+	padding-right:15px;
+	float:left;
+}
+
+.right-column-2{
+	text-align: left;
+	width:50%;
+	padding-left:15px;
+	padding-right:15px;
+	float:left;
+}
+
+.right-align{
+	text-align:right;
+}
+
+.left-align{
+	text-align: left;
+}

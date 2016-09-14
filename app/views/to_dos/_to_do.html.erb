@@ -1,1 +1,4 @@
-<p><%= to_do.item %></p>
+<div class="todo-row">
+	<div class="todo-checkbox"><%= check_box("", to_do.completed) %></div>
+	<div class="todo-item-column"><%= to_do.item %></div>
+</div>
