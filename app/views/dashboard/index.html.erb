@@ -5,6 +5,10 @@
 	<%= link_to "Invite your partner!", new_invite_path %>
 <% end %>
 
+<% if @family_goals != nil %>
+	<p><%= link_to "Our goals", goals_path %></p>
+<% end %>
+
 Set a new goal:
 <p><%= link_to "Plan for a trip", new_trip_path %></p>
 <p><%= link_to "Buy a house", new_house_path %></p>
