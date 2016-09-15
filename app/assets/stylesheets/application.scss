@@ -87,6 +87,28 @@ a:focus { color: #00A99D; text-decoration: underline;}
 	margin-bottom:5px;
 }
 
+
+.outline-button{
+  border: 1px solid #00A99D;
+  background-color: transparent;
+  color:#00A99D;
+  padding:10px;
+  text-align: center;
+  border-radius:4px;
+  margin: auto;
+ 
+}
+
+.outline-minor-button{
+	border: 1px solid #00A99D;
+  background-color: transparent;
+  color:#00A99D;
+  padding: 5px 10px 5px 10px;
+  text-align: center;
+  border-radius:4px;
+  margin: auto;
+}
+
 .next-button{
   border: 1px solid #00A99D;
   background-color: #00A99D;

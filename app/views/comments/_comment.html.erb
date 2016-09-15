@@ -1,1 +1,15 @@
-<p><%= comment.message %>  <%= comment.user.email %></p>
+<div class="chat-row">
+<% if comment.user.first_name == current_user.first_name %>
+		<div class="my_chat_bubble">
+			<div class="my_chat_triangle">
+			</div>
+	<% else %>
+		<div class="partner_chat_bubble">
+			<div class="partner_chat_triangle">
+			</div>
+	<% end %>
+
+	<%= comment.message %> 
+
+	</div>
+</div>

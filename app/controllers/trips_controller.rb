@@ -23,6 +23,11 @@ class TripsController < ApplicationController
     @comments = @goal.comments
     @to_do = ToDo.new
     @to_dos = @goal.to_dos
+    if (current_user.sent_invites.count != 0)
+      @partner_name = current_user.sent_invites.first.first_name
+    elsif (current_user.sent_invites.count == 0)
+      @partner_name = "your partner"
+    end
   end
 
   def edit
