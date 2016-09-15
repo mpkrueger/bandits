@@ -8,7 +8,7 @@
 	<% if @family_goals != nil %>
 		<% @family_goals.each do |goal| %>
 			<% if goal.trips.present? %>
-				<h2><%= link_to goal.trips.first.place, trip_path(goal.trips.first) %></h2>
+				<h2><%= link_to goal.trips.first.place, summary_trip_path(goal.trips.first) %></h2>
 			<% elsif goal.houses.present? %>
 				<h2><%= link_to goal.trips.first.place, house_path(goal.houses.first) %></h2>
 			<% end %>

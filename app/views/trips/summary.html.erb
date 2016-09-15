@@ -1,6 +1,6 @@
 <div class="container">
 	<div style="padding-left: 0px;  padding-right: 0px;">
-			<%= image_tag(@images[0], class: "img-responsive") %>
+			<%= image_tag(@results.items[rand(@results.items.size)].link, class: "img-responsive") %>
 	</div>
 </div>
 <body>
