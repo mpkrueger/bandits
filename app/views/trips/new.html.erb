@@ -27,7 +27,7 @@ For how many nights?	<br />
 <p class="question">
 Which month are you thinking? <br />
 	<% if browser.device.mobile? %>
-		<%= f.month :trip_date %>
+		<%= f.month_field :trip_date %>
 	<% else %>
 		<%= f.text_field :trip_date, class: 'datepicker' %>
 	<% end %>
