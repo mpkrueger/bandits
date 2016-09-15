@@ -1,15 +1,30 @@
+<body>
+
+<div class="heading">
+	 <%= link_to root_path do %>
+		<div class="home-icon">
+			<%= "\u{27F0}" %>
+		</div> 
+	<% end %>
+	<div class="nav-title">
+		Trip Summary
+	</div>
+</div>
+
 <div class="image-container">
 	
 			<%= image_tag(@images[rand(@images.size)].link, class: "img-responsive") %>
 	
 </div>
-<body>
-<div class="heading">TRIP TO <%= @trip.place.upcase %>
-	<br /><%= @trip.date.strftime("%B").upcase %> 2017
-	<br /><%= @trip.duration %>-day trip
-</div>
 
 <div class="centered main-content">
+
+	<div class="section-header">TRIP TO <%= @trip.place.upcase %>
+		<br /><%= @trip.date.strftime("%B").upcase %> 2017
+		<br /><%= @trip.duration %>-day trip
+	</div>
+
+
 	<div class="section-header">ESTIMATED COSTS </div>
 	<p class="big-cost">$<%= @total_cost %></p>
 
@@ -58,9 +73,5 @@
 		<%= render partial: 'comments/form' %>
 	</div>
 
-<hr />
-	<div class="button-row">
-      <%= link_to "Back to Goals Dashboard", root_path %>
-    </div>
 </div>
 </body>
