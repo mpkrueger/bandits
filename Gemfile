@@ -4,6 +4,7 @@ gem 'devise'
 gem 'figaro', '1.0'
 gem 'bootstrap-sass'
 gem 'google_custom_search_api'
+gem 'bootstrap-datepicker-rails'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
