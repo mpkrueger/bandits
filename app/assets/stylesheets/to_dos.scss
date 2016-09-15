@@ -2,32 +2,39 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.todo-button{
-    border: 1px solid #888;
-    background-color: transparent;
-    color: #888;
-    text-align: center;
-    border-radius: 10px;
-    margin: auto;
-    width: 40px;
-    height: 24px;
-    font-size: small;
+/* formatting for adding new to-dos */
+
+.add-new-todo-row{
+	margin-bottom:20px;
+    height: 35px;
+	float:left;
+	width:100%;
 }
 
-.todo-add-row{
-	margin-bottom:10px;
-	height:30px;
+.new-todo-field-column{
+	width:80%;	
+	float:left;
 }
 
+.new-todo-field{
+	height:34px;
+	width:100%;
+}
+
+.new-todo-btn-column{
+	float:left;
+	width:40px;
+	margin-left: 10px;
+}
+
+
+
+/* formatting for existing to-dos */
 .todo-row{
 	margin-bottom:10px;
 	height:20px;
 }
 
-.new-todo-field{
-	width:80%;
-	height:34px;
-}
 
 .todo-checkbox{
 	text-align: right;
