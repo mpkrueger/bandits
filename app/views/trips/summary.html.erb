@@ -1,3 +1,8 @@
+<div class="container">
+	<div class="col-md-4" style="padding-left: 0px;  padding-right: 0px;">
+			<%= image_tag(@images[0], class: "img-responsive") %>
+	</div>
+</div>
 <body>
 <div class="heading">TRIP TO <%= @trip.place.upcase %>
 	<br /><%= @trip.date.strftime("%B").upcase %> 2017
