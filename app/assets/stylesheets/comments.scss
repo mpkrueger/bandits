@@ -61,48 +61,53 @@
 }
 
 .my_chat_triangle{
-    content: "";
-    position: relative;
-    bottom: -11px;
-    right: -11px;
-    width: 0;
-    height: 0;
-    border: 10px solid #ccc;
-    border-right-color: transparent;
-    border-top-color: transparent;
-    float: right;
+  content: "";
+  position: relative;
+  top: -10px;
+  right: -10px;
+  width: 0;
+  height: 0;
+  border: 10px solid #00A99D;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  float: right;
 }
 
 .my_chat_bubble{
 	width:60%;
-    background-color:#ccc;
-    padding-bottom:10px;
-    padding-top:10px;
-    margin: auto;
-    position: relative;
-    float: right;
+  background-color:#00A99D;
+  padding-bottom:10px;
+  padding-top:10px;
+  position: relative;
+  float: right;
+  text-align: left;
+  padding-left: 15px;
+  margin-right: 10px;
+  color: white;
 }
 
 .partner_chat_triangle{
   content: "";
   position: relative;
-  top: -15px;
-  left: -15px;
+  top: -10px;
+  left: -10px;
   width: 0;
   height: 0;
-  border: 10px solid #367D8E;
+  border: 10px solid #ccc;
   border-left-color: transparent;
   border-bottom-color: transparent;
   float: left;
 }
 
 .partner_chat_bubble{
-	width:60%;
-    background-color:#367D8E;
-    padding-bottom:20px;
-    padding-top:15px;
-    margin: auto;
-    position: relative;
+  width: 60%;
+  background-color: #ccc;
+  padding-bottom:10px;
+  padding-top:10px;
+  position: relative;
+  float: left;
+  margin-left: 10px;
+  text-align: left;
 }
 
 

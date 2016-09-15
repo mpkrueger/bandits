@@ -4,6 +4,11 @@
 
 /* formatting for adding new to-dos */
 
+.new-to_do{
+	height: 40px;
+    margin-bottom: 10px;
+}
+
 .add-new-todo-row{
 	margin-bottom:20px;
     height: 35px;
@@ -32,22 +37,19 @@
 /* formatting for existing to-dos */
 .todo-row{
 	margin-bottom:10px;
-	height:20px;
+    height: 28px;
 }
 
 
 .todo-checkbox{
-	text-align: right;
+	text-align: left;
+	padding-right: 15px;
 	width:10%;
-	padding-left:15px;
-	padding-right:15px;
 	float:left;
 }
 
 .todo-item-column{
 	text-align: left;
 	width:90%;
-	padding-left:15px;
-	padding-right:15px;
 	float:left;
 }
