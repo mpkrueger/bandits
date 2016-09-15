@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'invites/new'
-
-  get 'families/invite'
-
   resources :topics
   resources :comments
   resources :invites
