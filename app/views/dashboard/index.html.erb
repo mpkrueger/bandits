@@ -2,28 +2,40 @@
 
 <% if current_user %>
 	<% if @family_members < 2 %>
-		<%= link_to "Invite your partner!", new_invite_path %>
+		<div class="top-banner">
+			<%= link_to "Invite your partner!", new_invite_path %>
+		</div>
 	<% end %>
 
 	<% if @family_goals != nil %>
 		<% @family_goals.each do |goal| %>
-			<% if goal.trips.present? %>
-				<h2><%= link_to goal.trips.first.place, summary_trip_path(goal.trips.first) %></h2>
+			<% if @trip.present? %>
+				<div class="dashboard-trip-goal-row">
+					<%= link_to summary_trip_path(@trip) do %>		
+					<div class="dashboard-goal-image-col">	
+						<%= image_tag(@images[rand(@images.size)].link, class: "dashboard-goal-image") %>
+					</div>
+					<div class="dashboard-goal-info-col">
+						<div class="dashboard-goal-name">
+						Trip to <%= @trip.place %> <br />
+						<%= @trip.date.strftime("%B") %>
+						</div>
+					</div>
+					<div class="dashboard-goal-amount">
+						$<%= @tripcost %>
+					</div>
+					<% end %>
+				</div>
 			<% elsif goal.houses.present? %>
 				<h2><%= link_to goal.trips.first.place, house_path(goal.houses.first) %></h2>
 			<% end %>
 		<% end %>
 	<% end %>
 
-	Set a new goal:
-	<p><%= link_to "Plan for a trip", new_trip_path %></p>
-	<p><%= link_to "Buy a house", new_house_path %></p>
-	<p><%= link_to "Create an emergency fund", new_emergency_fund_path %></p>
-	<p><%= link_to "Save for retirement", new_retirement_path %></p>
-	<p><%= link_to "Save for your child's college", new_college_path %></p>
 
 
-	<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+
+	<%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"sign-out-link" %>
 <% else %>
 	<div class="centered">
 	<p>
