@@ -1,7 +1,10 @@
 <%= form_for @to_do, remote: true do |f| %>
-	<div class="todo-add-row">
-		<%= f.text_field :item, placeholder: "e.g. book our flight", :class=>"new-todo-field" %>
+	<div class="add-new-todo-row">
+		<div class="new-todo-field-column"><%= f.text_field :item, placeholder: "e.g. book our flight", :class=>"new-todo-field" %>
+			
+		</div>
 		<%= f.hidden_field :goal_id, value: @goal_id %>
-		<%= f.submit "+", :class=>"outline-minor-button" %>
+		<div class="new-todo-btn-column"><%= f.submit "+", :class=>"outline-minor-button new-todo-btn-column" %>
+		</div>
 	</div>
 <% end %>

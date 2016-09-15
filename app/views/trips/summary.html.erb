@@ -27,7 +27,7 @@
 		<div class="left-column-2">Daily Fun: </div>
 		<div class="right-column-2">$<%= @trip.fun_cost %>/day</div>
 	</div>
-<hr />
+<hr class="hr-goals"/>
 	<div class="section-header">TO-DOS </div>
 	<% if @goal.to_dos.empty? %>
 		<p class="section-instructions"> You can add to this later, but feel free to start jotting down tasks. </p> 
@@ -41,7 +41,7 @@
 		<% end %>
 	</div>
 
-<hr />
+<hr class="hr-goals"/>
 	<div class="section-header">CHAT </div>
 	<% if @goal.comments.empty? %>
 		<p class="section-instructions">You can use this area to chat with <%= @partner_name %> about plans and get pumped about your trip! </p>
