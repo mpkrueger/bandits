@@ -28,8 +28,17 @@ class DashboardController < ApplicationController
 		  		end
 		  	end
 	  	end
+
+	    if (@family_members < 2 && current_user.sent_invites.present?)
+	      @partner_name = current_user.sent_invites.first.first_name
+	    elsif (@family_members >= 2)
+	    	@partner_name =  
+	    		@family.users.where([':first_name <> ?', current_user.first_name]).first.first_name
+
+	    else
+	      @partner_name = "your partner"
+		end
+
 	end
-
-
-end
+  end
 end
