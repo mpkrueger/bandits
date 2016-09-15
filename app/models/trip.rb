@@ -1,4 +1,5 @@
 class Trip < ApplicationRecord
+  require "browser"
   belongs_to :goal
 
   def trip_date
