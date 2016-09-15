@@ -28,7 +28,17 @@ class TripsController < ApplicationController
     @image_options = {}
     @image_options[:searchType] = "image"
     @image_options[:imgSize] = "xlarge"
+    @images = []
     @results = GoogleCustomSearchApi.search(@trip.place, @image_options)
+
+    # filter to keep images where height < width
+    @results.items.each do |result|
+      height = result["image"]["height"]
+      width = result["image"]["width"]
+      if height < width
+        @images.push result
+      end
+    end
     
 
     if (current_user.sent_invites.count != 0)
