@@ -18,6 +18,6 @@ class InvitesController < ApplicationController
   private
 
   def invite_params
-    params.require(:invite).permit(:family_id, :email)
+    params.require(:invite).permit(:family_id, :email, :first_name)
   end
 end

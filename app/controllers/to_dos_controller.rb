@@ -27,6 +27,6 @@ class ToDosController < ApplicationController
   private
 
   def todo_params
-  	params.require(:to_do).permit(:item, :assignee, :goal_id)
+  	params.require(:to_do).permit(:item, :assignee, :goal_id, :completed)
   end
 end

@@ -1,19 +1,22 @@
-<h1>Welcome to Savvy</h1>
+
 
 <% if current_user %>
-	<% if @family_members < 2 %>
+
+	<% if (@family_members < 2 && current_user.sent_invites.empty?) %>
 		<div class="top-banner">
-			<%= link_to "Invite your partner!", new_invite_path %>
+			<%= link_to "Invite your partner \u{2192}", new_invite_path, :class => 'banner-link' %>
 		</div>
 	<% end %>
 
+	<h1>Savings Goals for you and <%= @partner_name %> </h1>
 	<% if @family_goals != nil %>
 		<% @family_goals.each do |goal| %>
 			<% if @trip.present? %>
 				<div class="dashboard-trip-goal-row">
 					<%= link_to summary_trip_path(@trip) do %>		
 					<div class="dashboard-goal-image-col">	
-						<%= image_tag(@images[rand(@images.size)].link, class: "dashboard-goal-image") %>
+						<%= image_tag(@images[rand(@images.size)].link, 
+						class: "dashboard-goal-image") %>
 					</div>
 					<div class="dashboard-goal-info-col">
 						<div class="dashboard-goal-name">
@@ -34,10 +37,12 @@
 
 
 
-
-	<%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"sign-out-link" %>
+	<div class="centered">
+		<%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"sign-out-link" %>
+	</div>
 <% else %>
 	<div class="splash-page">
+	<h1>Welcome to Savvy</h1>
 		<div class="centered">
 			<p>
 				<%= link_to "Sign up", new_user_registration_path %> 
