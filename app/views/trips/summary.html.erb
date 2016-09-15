@@ -27,9 +27,11 @@
 		<div class="left-column-2">Daily Fun: </div>
 		<div class="right-column-2">$<%= @trip.fun_cost %>/day</div>
 	</div>
-
+<hr />
 	<div class="section-header">TO-DOS </div>
-	<p> You can add to this later, but feel free to start jotting down tasks </p>
+	<% if @goal.to_dos.empty? %>
+		<p class="section-instructions"> You can add to this later, but feel free to start jotting down tasks. </p> 
+	<% end %>
 	<div class="new-to_do">
 		<%= render partial: 'to_dos/form' %>
 	</div>
@@ -39,14 +41,26 @@
 		<% end %>
 	</div>
 
-	<div class="section-header">COMMENTS </div>
-	<div class="new-comment">
-		<%= render partial: 'comments/form' %>
-	</div>
+<hr />
+	<div class="section-header">CHAT </div>
+	<% if @goal.comments.empty? %>
+		<p class="section-instructions">You can use this area to chat with <%= @partner_name %> about plans and get pumped about your trip! </p>
+	<% end %>
+
+	
 	<div class="js-comments">
 		<% @comments.each do |comment| %>
 			<%= render partial: 'comments/comment', locals: { comment: comment } %>
 		<% end %>
 	</div>
+
+	<div class="new-comment">
+		<%= render partial: 'comments/form' %>
+	</div>
+
+<hr />
+	<div class="button-row">
+      <%= link_to "Back to Goals Dashboard", root_path %>
+    </div>
 </div>
 </body>

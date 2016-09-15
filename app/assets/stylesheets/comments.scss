@@ -1,3 +1,105 @@
 // Place all the styles related to the Comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.new-comment{
+  margin-bottom:20px;
+}
+
+.chat_new_col{
+	width:80%;
+	padding-left:5px;
+	padding-right:5px;
+	float:left;
+}
+
+.chat_box{
+	height:34px;
+	resize: none;
+	text-align:left;
+	border-radius: 10px;
+	border: 1px solid #ccc;
+	width:100%;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+.chat_new_btn{
+	text-align: center;
+	width:6%;
+	padding-left:4px;
+	padding-right:4px;
+	float:left;
+  height:32px;
+}
+
+
+.chat_new-row{
+	margin-bottom:10px;
+	height:40px;
+  margin-top: 10px;
+}
+
+
+.hr_chat_new{
+	margin-top:0px;
+	margin-bottom:10px;
+}
+
+.chat-row{
+  margin-top: 5px;
+    width: 100%;
+    height: auto;
+    display: inline-block;
+}
+
+.my_chat_triangle{
+    content: "";
+    position: relative;
+    bottom: -11px;
+    right: -11px;
+    width: 0;
+    height: 0;
+    border: 10px solid #ccc;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    float: right;
+}
+
+.my_chat_bubble{
+	width:60%;
+    background-color:#ccc;
+    padding-bottom:10px;
+    padding-top:10px;
+    margin: auto;
+    position: relative;
+    float: right;
+}
+
+.partner_chat_triangle{
+  content: "";
+  position: relative;
+  top: -15px;
+  left: -15px;
+  width: 0;
+  height: 0;
+  border: 10px solid #367D8E;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  float: left;
+}
+
+.partner_chat_bubble{
+	width:60%;
+    background-color:#367D8E;
+    padding-bottom:20px;
+    padding-top:15px;
+    margin: auto;
+    position: relative;
+}
+
+
+
+
+

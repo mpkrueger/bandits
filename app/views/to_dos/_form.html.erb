@@ -1,5 +1,5 @@
 <%= form_for @to_do, remote: true do |f| %>
-	<div class="todo-row">
+	<div class="todo-add-row">
 		<%= f.text_field :item, placeholder: "e.g. book our flight" %>
 		<%= f.hidden_field :goal_id, value: @goal_id %>
 		<%= f.submit "+", :class=>"todo-button" %>

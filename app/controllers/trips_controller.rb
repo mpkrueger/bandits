@@ -30,6 +30,13 @@ class TripsController < ApplicationController
     @image_options[:imgSize] = "xlarge"
     @results = GoogleCustomSearchApi.search(@trip.place, @image_options)
     
+
+    if (current_user.sent_invites.count != 0)
+      @partner_name = current_user.sent_invites.first.first_name
+    elsif (current_user.sent_invites.count == 0)
+      @partner_name = "your partner"
+    end
+
   end
 
   def edit
