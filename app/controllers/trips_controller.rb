@@ -4,7 +4,7 @@ class TripsController < ApplicationController
   end
 
   def create
-  	@trip = Trip.new(params.require(:trip).permit(:place, :duration, :date, :flight_cost, :hotel_cost, :fun_cost))
+  	@trip = Trip.new(params.require(:trip).permit(:place, :duration, :date, :trip_date, :flight_cost, :hotel_cost, :fun_cost))
   	@goal = Goal.new(family: current_user.family)
   	@trip.goal = @goal
   	if @trip.save
