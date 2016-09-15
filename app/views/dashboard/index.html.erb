@@ -37,11 +37,14 @@
 
 	<%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"sign-out-link" %>
 <% else %>
-	<div class="centered">
-	<p>
-	<%= link_to "Sign up", new_user_registration_path %> 
-	</p><p>
-	<%= link_to "Sign in", new_user_session_path %>
-	</p>
+	<div class="splash-page">
+		<div class="centered">
+			<p>
+				<%= link_to "Sign up", new_user_registration_path %> 
+			</p>
+			<p>
+				<%= link_to "Sign in", new_user_session_path %>
+			</p>
+		</div>
 	</div>
 <% end %>
