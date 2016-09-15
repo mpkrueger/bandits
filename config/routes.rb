@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'goals/selection'
+
   resources :topics
   resources :comments
   resources :invites

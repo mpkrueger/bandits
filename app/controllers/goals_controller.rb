@@ -1,5 +1,5 @@
 class GoalsController < ApplicationController
-  def index
+  def selection
   end
 
   def new
@@ -9,5 +9,8 @@ class GoalsController < ApplicationController
   def create
   	@goal = Goal.new
   	@goal.save
+  end
+
+  def show
   end
 end
