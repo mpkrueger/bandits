@@ -1,7 +1,7 @@
-<div class="container">
-	<div style="padding-left: 0px;  padding-right: 0px;">
+<div class="image-container">
+	
 			<%= image_tag(@results.items[rand(@results.items.size)].link, class: "img-responsive") %>
-	</div>
+	
 </div>
 <body>
 <div class="heading">TRIP TO <%= @trip.place.upcase %>
