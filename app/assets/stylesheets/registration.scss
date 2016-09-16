@@ -6,3 +6,58 @@
 	margin-top: 20px;
 	font-size: 12;
 }
+
+ .app-name{
+    text-align: center;
+    font-size: 50px;
+    max-width: 70%;
+    margin:auto;
+
+  }
+
+  .splash-page {
+    margin: auto;
+    margin-top: 6%;
+    width: 100%;
+
+
+  }
+
+  .app-tagline{
+    text-align: center;
+        color:#fff;
+  }
+
+
+  .splash-image{
+    text-align: center;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 250px;
+    max-width:80%;
+    height:auto;
+  }
+
+  .splash-links{
+  	font-size:18px;
+  	width:15%;
+  	margin-top:10px;
+  	color:#fff;
+  }
+
+ .splash-button{
+  border: 1px solid #fff;
+  background-color: transparent;
+  color:#00A99D;
+  padding:10px;
+  text-align: center;
+  border-radius:4px;
+  margin: auto;
+}
+
+  .splash-page-background{
+//	background-color: #125D70;
+//	background-color: #FFF;
+	background-color:#387267;
+}

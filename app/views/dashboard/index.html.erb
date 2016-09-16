@@ -56,15 +56,18 @@
 	</div>
 
 <% else %>
+	<body class="splash-page-background">
 	<div class="splash-page">
-	<h1>Welcome to Savvy</h1>
-		<div class="centered">
-			<p>
-				<%= link_to "Sign up", new_user_registration_path %> 
-			</p>
-			<p>
-				<%= link_to "Sign in", new_user_session_path %>
-			</p>
+		<p class="app-name"><%= image_tag("savvy-logo.png", class:"app-name") %> </p>
+		<p class="app-tagline"> The financial app for couples </p>
+		<p><%= image_tag("hot-air-balloon.png", class:"splash-image") %></p>
+			<div class="splash-button" style="width:40%; margin-top:10px">
+				<%= link_to "Sign up", new_user_registration_path, style:"color:#fff" %> 
+			</div>
+			<div class="splash-button" style="width:40%; margin-top:10px">
+				<%= link_to "Sign in", new_user_session_path, style:"color:#fff" %>
+			</div>
 		</div>
 	</div>
+	</body>
 <% end %>
