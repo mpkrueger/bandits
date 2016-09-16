@@ -1,4 +1,4 @@
 <div class="todo-row">
-	<div class="todo-checkbox"><%= check_box("", to_do.completed) %></div>
+	<div class="todo-checkbox"><%= check_box_tag("to_do", to_do.id, to_do.completed) %></div>
 	<div class="todo-item-column"><%= to_do.item %></div>
 </div>

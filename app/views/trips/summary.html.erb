@@ -63,10 +63,26 @@
 		<%= render partial: 'to_dos/form' %>
 	</div>
 	<div class="js-to_dos">
-		<% @to_dos.each do |to_do| %>
-			<%= render partial: 'to_dos/to_do', locals: { to_do: to_do } %>
-		<% end %>
+		<%= render @to_dos %>
 	</div>
+
+	<script type="text/javascript">
+	
+		$(function(){
+			$('input[name=to_do]').click(function(){
+				$.ajax({
+					url: '/to_dos/' + this.value, 
+					data: {
+						completed: this.checked,
+					}, 
+					type: 'PUT',
+					success: function(){
+						console.log('updated');
+					}
+				});
+			});
+		});
+	</script>
 
 <hr class="hr-goals"/>
 	<div class="section-header">CHAT </div>

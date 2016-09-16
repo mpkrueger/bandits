@@ -24,6 +24,12 @@ class ToDosController < ApplicationController
   def edit
   end
 
+  def update
+    @to_do = ToDo.find(params[:id])
+    @to_do.update(completed: params[:completed])
+    render text: 'ok'
+  end
+
   private
 
   def todo_params
