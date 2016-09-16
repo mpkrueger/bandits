@@ -14,6 +14,19 @@ class TripsController < ApplicationController
   	end
   end
 
+  def update
+    @trip = Trip.find_by_id(params[:id])
+    if @trip.update_attributes(params.require(:trip).permit(:place, :duration, :date, :trip_date, :flight_cost, :hotel_cost, :fun_cost))
+      redirect_to summary_trip_path(@trip)
+    else
+      flash[:error] = "uh oh"
+    end
+  end
+
+  def edit
+    @trip = Trip.find_by_id(params[:id])
+  end
+
   def summary
     @trip = Trip.find_by_id(params[:id])
     @goal = @trip.goal
@@ -47,8 +60,5 @@ class TripsController < ApplicationController
       @partner_name = "your partner"
     end
 
-  end
-
-  def edit
   end
 end

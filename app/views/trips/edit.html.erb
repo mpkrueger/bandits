@@ -1,2 +1,68 @@
-<h1>Trips#edit</h1>
-<p>Find me in app/views/trips/edit.html.erb</p>
+<body class="page-background">
+
+<div class="heading">
+	 <%= link_to root_path do %>
+		<div class="home-icon">
+			<%= "\u{27F0}" %>
+		</div> 
+	<% end %>
+	<div class="nav-title">
+		Plan a trip
+	</div>
+</div>
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.datepicker').datepicker({format: "MM, yyyy", startView: 1, minViewMode: 1});
+  });
+</script>
+
+<div class="main-content">
+
+
+	<%= form_for @trip do |f| %>
+		<p class="question">
+		Where do you want to go? <br />
+			<%= f.text_field :place, placeholder: "" %>
+
+		</p>
+
+		<p class="question">
+		For how many nights?	<br />
+		<%= f.telephone_field :duration, placeholder: "" %>
+		</p>
+
+		<p class="question">
+		Which month are you thinking? <br />
+			<% if browser.device.mobile? %>
+				<%= f.month_field :trip_date %>
+			<% else %>
+				<%= f.text_field :trip_date, class: 'datepicker' %>
+			<% end %>
+		</p>
+
+		<p class="question">
+		Take a quick look at <%= link_to "Google flights", "http://flights.google.com" %>. How much do you estimate for flights for both of you? <br />
+			$<%= f.telephone_field :flight_cost, placeholder: "" %>
+		</p>
+
+		<p class="question">
+		How much do you think an average hotel night will cost? <br />
+			$<%= f.telephone_field :hotel_cost, placeholder: "" %>
+		</p>
+
+		<p class="question">
+		How much do you want to budget for daily fun? (meals, tours, transit, etc.) <br />
+			$<%= f.telephone_field :fun_cost, placeholder: "" %>
+		</p>
+
+		<%= f.submit "Update", class: 'next-button' %>
+		<div class="page-bottom-padding">
+			<div class="padding-text">
+				adding space below next button
+			</div>
+		</div>
+	<% end %>
+</div>
+</body>
