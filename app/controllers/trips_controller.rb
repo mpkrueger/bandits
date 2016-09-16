@@ -62,6 +62,10 @@ class TripsController < ApplicationController
     elsif (current_user.sent_invites.count == 0)
       @partner_name = "your partner"
     end
+  end
 
+  def savings_feedback
+    @trip = Trip.find_by_id(params[:id])
+    @feedback = Feedback.new
   end
 end

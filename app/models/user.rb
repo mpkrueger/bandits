@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :sent_invites, class_name: "Invite", foreign_key: 'sender_id'
   has_many :comments
   has_many :to_dos
+  has_many :feedbacks
 
   def my_partner_name
     if self.family.users.count < 2
