@@ -8,4 +8,5 @@ class Goal < ApplicationRecord
   has_many :emergency_funds
   has_many :retirements
   has_many :custom_goals
+  has_many :feedbacks
 end

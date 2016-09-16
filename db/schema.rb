@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160914220428) do
+ActiveRecord::Schema.define(version: 20160916192258) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "colleges", force: :cascade do |t|
     t.integer  "goal_id"
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 20160914220428) do
     t.decimal  "percentage_to_pay"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-    t.index ["goal_id"], name: "index_colleges_on_goal_id"
+    t.index ["goal_id"], name: "index_colleges_on_goal_id", using: :btree
   end
 
   create_table "comments", force: :cascade do |t|
@@ -30,9 +33,9 @@ ActiveRecord::Schema.define(version: 20160914220428) do
     t.text     "message"
     t.integer  "goal_id"
     t.integer  "user_id"
-    t.index ["goal_id"], name: "index_comments_on_goal_id"
-    t.index ["topic_id"], name: "index_comments_on_topic_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
+    t.index ["goal_id"], name: "index_comments_on_goal_id", using: :btree
+    t.index ["topic_id"], name: "index_comments_on_topic_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
   create_table "custom_goals", force: :cascade do |t|
@@ -42,7 +45,7 @@ ActiveRecord::Schema.define(version: 20160914220428) do
     t.integer  "target_amount"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.index ["goal_id"], name: "index_custom_goals_on_goal_id"
+    t.index ["goal_id"], name: "index_custom_goals_on_goal_id", using: :btree
   end
 
   create_table "emergency_funds", force: :cascade do |t|
@@ -52,7 +55,7 @@ ActiveRecord::Schema.define(version: 20160914220428) do
     t.integer  "num_months"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.index ["goal_id"], name: "index_emergency_funds_on_goal_id"
+    t.index ["goal_id"], name: "index_emergency_funds_on_goal_id", using: :btree
   end
 
   create_table "families", force: :cascade do |t|
@@ -60,12 +63,23 @@ ActiveRecord::Schema.define(version: 20160914220428) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "feedbacks", force: :cascade do |t|
+    t.string   "approach",   default: [],              array: true
+    t.text     "thoughts"
+    t.integer  "goal_id"
+    t.integer  "user_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.index ["goal_id"], name: "index_feedbacks_on_goal_id", using: :btree
+    t.index ["user_id"], name: "index_feedbacks_on_user_id", using: :btree
+  end
+
   create_table "goals", force: :cascade do |t|
     t.integer  "family_id"
     t.integer  "created_by_user_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.index ["family_id"], name: "index_goals_on_family_id"
+    t.index ["family_id"], name: "index_goals_on_family_id", using: :btree
   end
 
   create_table "houses", force: :cascade do |t|
@@ -75,7 +89,7 @@ ActiveRecord::Schema.define(version: 20160914220428) do
     t.date     "date"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
-    t.index ["goal_id"], name: "index_houses_on_goal_id"
+    t.index ["goal_id"], name: "index_houses_on_goal_id", using: :btree
   end
 
   create_table "invites", force: :cascade do |t|
@@ -87,7 +101,7 @@ ActiveRecord::Schema.define(version: 20160914220428) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.string   "first_name"
-    t.index ["family_id"], name: "index_invites_on_family_id"
+    t.index ["family_id"], name: "index_invites_on_family_id", using: :btree
   end
 
   create_table "retirements", force: :cascade do |t|
@@ -97,7 +111,7 @@ ActiveRecord::Schema.define(version: 20160914220428) do
     t.integer  "target_amount"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.index ["goal_id"], name: "index_retirements_on_goal_id"
+    t.index ["goal_id"], name: "index_retirements_on_goal_id", using: :btree
   end
 
   create_table "to_dos", force: :cascade do |t|
@@ -108,8 +122,8 @@ ActiveRecord::Schema.define(version: 20160914220428) do
     t.datetime "updated_at",                 null: false
     t.integer  "user_id"
     t.boolean  "completed",  default: false
-    t.index ["goal_id"], name: "index_to_dos_on_goal_id"
-    t.index ["user_id"], name: "index_to_dos_on_user_id"
+    t.index ["goal_id"], name: "index_to_dos_on_goal_id", using: :btree
+    t.index ["user_id"], name: "index_to_dos_on_user_id", using: :btree
   end
 
   create_table "topics", force: :cascade do |t|
@@ -120,7 +134,7 @@ ActiveRecord::Schema.define(version: 20160914220428) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_topics_on_user_id"
+    t.index ["user_id"], name: "index_topics_on_user_id", using: :btree
   end
 
   create_table "trips", force: :cascade do |t|
@@ -133,7 +147,7 @@ ActiveRecord::Schema.define(version: 20160914220428) do
     t.integer  "fun_cost"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["goal_id"], name: "index_trips_on_goal_id"
+    t.index ["goal_id"], name: "index_trips_on_goal_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -157,9 +171,26 @@ ActiveRecord::Schema.define(version: 20160914220428) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.integer  "family_id"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["family_id"], name: "index_users_on_family_id"
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["family_id"], name: "index_users_on_family_id", using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "colleges", "goals"
+  add_foreign_key "comments", "goals"
+  add_foreign_key "comments", "topics"
+  add_foreign_key "comments", "users"
+  add_foreign_key "custom_goals", "goals"
+  add_foreign_key "emergency_funds", "goals"
+  add_foreign_key "feedbacks", "goals"
+  add_foreign_key "feedbacks", "users"
+  add_foreign_key "goals", "families"
+  add_foreign_key "houses", "goals"
+  add_foreign_key "invites", "families"
+  add_foreign_key "retirements", "goals"
+  add_foreign_key "to_dos", "goals"
+  add_foreign_key "to_dos", "users"
+  add_foreign_key "topics", "users"
+  add_foreign_key "trips", "goals"
+  add_foreign_key "users", "families"
 end
