@@ -1,0 +1,36 @@
+<body class="page-background">
+
+	<div class="heading">
+		 <%= link_to root_path do %>
+			<div class="home-icon">
+				<%= "\u{27F0}" %>
+			</div> 
+		<% end %>
+		<div class="nav-title">
+			Choose a picture
+		</div>
+	</div>
+
+	<%= form_for @trip do |f| %>
+		<div class="image-container">
+<!-- 			<%= image_tag(@image1, class: "img-responsive") %>
+			<%= image_tag(@image2, class: "img-responsive") %>
+			<%= image_tag(@image3, class: "img-responsive") %>
+			<%= image_tag(@image4, class: "img-responsive") %> -->
+
+			<%= f.select :image, @image_links.map { |i| [i, {'data-img-src' => i}] } %>
+
+		</div>
+
+		<%= f.submit "Next" %>
+	<% end %>
+
+	<script type="text/javascript">
+	
+		$(function(){
+			$("select").imagepicker()
+		});
+	</script>
+
+</body>
+
