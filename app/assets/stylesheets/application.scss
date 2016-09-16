@@ -29,13 +29,14 @@ html{
 
 .heading{
     width:100%;
-    background-color:#00A99D;
+	background-color: #3481b5;
     margin-top:0px;
     padding:15px;
     text-align:center;
     color:#fff;
     font-weight:500;
     height:50px;
+    border-bottom: 1px solid #2c6e93;
 }
 
 body{
@@ -171,7 +172,9 @@ h2{
 .home-icon{
 	width:25px;
 	float:left;
-	color:#fff;
+	color:#eee;
+	font-size: 20px;
+    line-height: 20px;
 }
 
 .nav-title{
