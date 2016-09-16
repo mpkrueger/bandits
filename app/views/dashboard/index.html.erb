@@ -21,12 +21,11 @@
 						<div class="dashboard-goal-info-col">
 							<div class="dashboard-goal-name">
 							Trip to <%= @trip.place %> <br />
+							$<%= @monthly_savings_goal %> / month <br />
 							<span style="font-size:13px"><%= @trip.date.strftime("%B %Y") %></span>
 							</div>
 						</div>
-						<div class="dashboard-goal-amount">
-							$<%= @tripcost %>
-						</div>
+						
 					<% end %>
 				</div>
 			<% elsif goal.houses.present? %>
