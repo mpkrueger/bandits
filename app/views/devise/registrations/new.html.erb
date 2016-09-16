@@ -11,12 +11,12 @@
   <div class="centered">
     <div class="question">
     <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autofocus: true %>
+    <%= f.text_field :first_name, autofocus: true, class:"input_field"  %>
     </div>
 
     <div class="question">
       <%= f.label :email %><br />
-      <%= f.email_field :email %>
+      <%= f.email_field :email, class:"input_field"  %>
     </div>
 
     <div class="question">
@@ -24,12 +24,12 @@
       <% if @minimum_password_length %> <br />
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
-      <%= f.password_field :password, autocomplete: "off" %>
+      <%= f.password_field :password, autocomplete: "off", class:"input_field"  %>
     </div>
 
     <div class="question">
       <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      <%= f.password_field :password_confirmation, autocomplete: "off", class:"input_field"  %>
     </div>
 
     <div class="button-row">

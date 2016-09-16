@@ -4,12 +4,12 @@
   <div class="centered">
   <div class="question">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, autofocus: true, class:"input_field"  %>
   </div>
 
   <div class="question">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", class:"input_field"  %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
