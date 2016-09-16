@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :topics
   resources :comments
+  resources :feedbacks
   resources :invites
   resources :custom_goals
   resources :retirements
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
   resources :trips do
     member do
       get 'summary'
+      get 'savings_feedback'
     end
   end
   resources :colleges

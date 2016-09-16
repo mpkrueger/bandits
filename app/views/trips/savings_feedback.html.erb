@@ -1,0 +1,38 @@
+<body>
+
+	<div class="heading">
+		 <%= link_to root_path do %>
+			<div class="home-icon">
+				<%= "\u{27F0}" %>
+			</div> 
+		<% end %>
+		<div class="nav-title">
+			Trip Summary
+		</div>
+	</div>
+
+	<div class="main-content">
+		<p>We'd love to know how you think about saving for your trip - please fill out the below!
+		</p>
+
+		<%= form_for @feedback do |f| %>
+			<%= hidden_field_tag :trip_id, @trip.id %>
+			<p class="question">
+				Will you want to actually set the money aside for this trip in another account? Or just make sure you have enough in your existing account? <br />
+
+				<p><%= check_box_tag 'feedback[approach][]', 'Set up an auto-transfer', @feedback.approach.include?('Set up an auto-transfer') %> Set up an auto-transfer</p>
+				<p><%= check_box_tag 'feedback[approach][]', 'Figure out how much I need to cut back', @feedback.approach.include?('Figure out how much I need to cut back') %> Figure out how much I need to cut back</p>
+				<p><%= check_box_tag 'feedback[approach][]', 'Track progress toward this goal', @feedback.approach.include?('Track progress toward this goal') %> Track progress toward this goal</p>
+				<p><%= check_box_tag 'feedback[approach][]', 'Ways to bring down trip cost', @feedback.approach.include?('Ways to bring down trip cost') %> Ways to bring down trip cost</p>
+			</p>
+			<br />
+			<p class="question">
+				What were your thoughts when you saw the amount you needed to save for this trip?
+
+				<%= f.text_field :thoughts %>
+			</p>
+
+			<%= f.submit "Send feedback" %>
+
+		<% end %>
+</body>
