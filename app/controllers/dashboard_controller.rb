@@ -33,7 +33,7 @@ class DashboardController < ApplicationController
 	      @partner_name = current_user.sent_invites.first.first_name
 	    elsif (@family_members >= 2)
 	    	@partner_name =  
-	    		@family.users.where([':first_name <> ?', current_user.first_name]).first.first_name
+	    		current_user.my_partner.first_name
 
 	    else
 	      @partner_name = "your partner"

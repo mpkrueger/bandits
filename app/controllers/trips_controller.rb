@@ -8,7 +8,8 @@ class TripsController < ApplicationController
   	@goal = Goal.new(family: current_user.family)
   	@trip.goal = @goal
   	if @trip.save
-  		redirect_to summary_trip_path(@trip)
+  		UpdateMailer.new_goal_update(current_user).deliver
+      redirect_to summary_trip_path(@trip)
   	else
   		flash[:error] = "uh oh"
   	end
