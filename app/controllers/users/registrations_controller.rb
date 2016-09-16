@@ -78,7 +78,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # The path used after sign up.
   def after_sign_up_path_for(resource)
-    new_invite_path
+    if current_user.family.users.count < 2
+      new_invite_path
+    else
+      root_path
+    end
   end
 
   # The path used after sign up for inactive accounts.
