@@ -35,7 +35,9 @@
 		<% end %>
 	<% end %>
 
-
+	<div class="centered">
+		<%= link_to "Setup a savings goal", goals_selection_path %>
+	</div>
 
 	<div class="centered">
 		<%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"sign-out-link" %>

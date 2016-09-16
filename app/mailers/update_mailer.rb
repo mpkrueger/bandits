@@ -8,7 +8,7 @@ class UpdateMailer < ApplicationMailer
   def new_goal_update(user)
     @user = user
 
-    mail to: @user.my_partner.email
+    mail to: @user.my_partner_email
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
