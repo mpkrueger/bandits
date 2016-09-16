@@ -11,7 +11,7 @@ class TripsController < ApplicationController
   		if current_user.family.users.count >= 2
         UpdateMailer.new_goal_update(current_user).deliver
       end
-      redirect_to summary_trip_path(@trip)
+      redirect_to image_trip_path(@trip)
   	else
   		flash[:error] = "uh oh"
   	end
