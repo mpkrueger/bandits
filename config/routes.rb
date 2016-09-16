@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :houses
   resources :trips do
     member do
+      get 'image'
       get 'summary'
       get 'savings_feedback'
     end

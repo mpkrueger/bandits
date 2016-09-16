@@ -15,7 +15,7 @@
 				<div class="dashboard-trip-goal-row">
 					<%= link_to summary_trip_path(@trip) do %>		
 						<div class="dashboard-goal-image-col">	
-							<%= image_tag(@images[rand(@images.size)].link, 
+							<%= image_tag(@trip.image, 
 							class: "dashboard-goal-image") %>
 						</div>
 						<div class="dashboard-goal-info-col">

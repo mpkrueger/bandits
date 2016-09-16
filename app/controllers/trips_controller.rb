@@ -11,7 +11,7 @@ class TripsController < ApplicationController
   		if current_user.family.users.count >= 2
         UpdateMailer.new_goal_update(current_user).deliver
       end
-      redirect_to summary_trip_path(@trip)
+      redirect_to image_trip_path(@trip)
   	else
   		flash[:error] = "uh oh"
   	end
@@ -19,7 +19,7 @@ class TripsController < ApplicationController
 
   def update
     @trip = Trip.find_by_id(params[:id])
-    if @trip.update_attributes(params.require(:trip).permit(:place, :duration, :date, :trip_date, :flight_cost, :hotel_cost, :fun_cost))
+    if @trip.update_attributes(params.require(:trip).permit(:place, :duration, :date, :trip_date, :flight_cost, :hotel_cost, :fun_cost, :image))
       redirect_to summary_trip_path(@trip)
     else
       flash[:error] = "uh oh"
@@ -41,10 +41,18 @@ class TripsController < ApplicationController
     @to_dos = @goal.to_dos
     @monthly_savings_goal = @total_cost/((@trip.date.year * 12 + @trip.date.month) - (DateTime.now.year*12 + DateTime.now.month))
     @months_left = (@trip.date.year * 12 + @trip.date.month) - (DateTime.now.year*12 + DateTime.now.month)
+    
 
+    if (current_user.sent_invites.count != 0)
+      @partner_name = current_user.sent_invites.first.first_name
+    elsif (current_user.sent_invites.count == 0)
+      @partner_name = "your partner"
+    end
+  end
 
-
-
+  def image
+    @trip = Trip.find_by_id(params[:id])
+    @goal = @trip.goal
 
     # image search
     @image_options = {}
@@ -62,11 +70,15 @@ class TripsController < ApplicationController
       end
     end
     
+    @image1 = @images[0].link
+    @image2 = @images[1].link
+    @image3 = @images[2].link
+    @image4 = @images[3].link
 
-    if (current_user.sent_invites.count != 0)
-      @partner_name = current_user.sent_invites.first.first_name
-    elsif (current_user.sent_invites.count == 0)
-      @partner_name = "your partner"
+    @image_links = []
+
+    @images.each do |image|
+      @image_links.push image.link
     end
   end
 

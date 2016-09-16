@@ -5,7 +5,8 @@ gem 'figaro', '1.0'
 gem 'bootstrap-sass'
 gem 'google_custom_search_api'
 gem 'bootstrap-datepicker-rails'
-gem "browser"
+gem 'browser'
+gem 'image-picker-rails'
 
 gem 'pg'
 
