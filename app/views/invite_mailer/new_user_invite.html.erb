@@ -1,7 +1,16 @@
-<h1>Is this working</h1>
 
-<p>
-  <%= link_to "Sign up", new_registration_url(:user, invite_token: @invite.token) %>
+<h2 style="font-family:'Helvetica'; margin-left:10px"">Welcome to Savvy</h2>
+
+<p style="width:85%; font-family:'Helvetica'; font-size:14px; margin-left:10px; line-height:1.4"">
+	<%= @user.first_name %> has invited you to join Savvy! Savvy is a financial app that makes it easy for couples to set and plan goals together – whether you want to plan an awesome trip, buy a house, start saving for retirement, or something else entirely. You can propose goals to each other, get suggestions on how much money to save each month, track your progress. Get started so you and <%= @user.first_name %> can start living out your dreams. </p>
+
+<p style="width:85%; font-family:'Helvetica'; font-size:14px; margin-left:10px"">
+<a style="color:#00A99D">
+  <%= link_to "Join #{@user.first_name} on Savvy", new_registration_url(:user, invite_token: @invite.token) %>
+  </a>
 </p>
 
-How about the above?
+<p style="width:85%; font-family:'Helvetica'; font-size:14px; margin-left:10px; line-height:1.4"">
+Cheers, <br />
+The Savvy Team
+</p>

@@ -10,7 +10,10 @@ class InviteMailer < ApplicationMailer
     @greeting = "Hi"
     @invite = invite
 
-    mail to: @invite.email
+    @user = User.find_by_id(invite.sender_id)
+    @subject = @user.first_name + " invites you to join Savvy to set up savings goals together" 
+
+    mail(to: @invite.email, subject: @subject)
 
     # @new_reg_url = new_user_registration_url(:invite_token => @invite.token)
   end

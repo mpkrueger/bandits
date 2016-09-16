@@ -1,5 +1,5 @@
 <h1>Add your partner</h1>
-<div class="main-content">Let's get your partner in on this so you can come up with goals together!
+<div class="main-content centered">Let's get your partner in on this so you can come up with goals together!
 
 <p><br />
 <%= form_for @invite do |f| %>
@@ -7,12 +7,12 @@
 	
 	<div class="centered">
 		<div class="question">
-			<%= f.text_field :first_name, placeholder:"Partner's first name" %>
+			<%= f.text_field :first_name, placeholder:"Partner's first name", class:"input_field" %>
 		</div>
 
 		<div class="question">
 			
-			<%= f.email_field :email, placeholder: "Partner's email" %>
+			<%= f.email_field :email, placeholder: "Partner's email", class:"input_field" %>
 		</div>
 	<%= f.submit "Add", class:'next-button' %>
 	</div>
