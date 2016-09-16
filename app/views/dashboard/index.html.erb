@@ -14,34 +14,48 @@
 			<% if @trip.present? %>
 				<div class="dashboard-trip-goal-row">
 					<%= link_to summary_trip_path(@trip) do %>		
-					<div class="dashboard-goal-image-col">	
-						<%= image_tag(@images[rand(@images.size)].link, 
-						class: "dashboard-goal-image") %>
-					</div>
-					<div class="dashboard-goal-info-col">
-						<div class="dashboard-goal-name">
-						Trip to <%= @trip.place %> <br />
-						<span style="font-size:13px"><%= @trip.date.strftime("%B %Y") %></span>
+						<div class="dashboard-goal-image-col">	
+							<%= image_tag(@images[rand(@images.size)].link, 
+							class: "dashboard-goal-image") %>
 						</div>
-					</div>
-					<div class="dashboard-goal-amount">
-						$<%= @tripcost %>
-					</div>
+						<div class="dashboard-goal-info-col">
+							<div class="dashboard-goal-name">
+							Trip to <%= @trip.place %> <br />
+							<span style="font-size:13px"><%= @trip.date.strftime("%B %Y") %></span>
+							</div>
+						</div>
+						<div class="dashboard-goal-amount">
+							$<%= @tripcost %>
+						</div>
 					<% end %>
 				</div>
 			<% elsif goal.houses.present? %>
 				<!-- <h2><%= link_to goal.trips.first.place, house_path(goal.houses.first) %></h2> -->
 			<% end %>
 		<% end %>
-	<% end %>
 
-	<div class="centered">
-		<%= link_to "Setup a savings goal", goals_selection_path %>
+	<% end %>
+	<div class="dashboard-trip-goal-row">
+		<%= link_to goals_selection_path do %>
+			<div class="dashboard-goal-image-col">
+				<!--div style="font-size:48px;text-align:center;margin:auto;margin-top: 4px;">+
+				</div-->
+				<%= image_tag('new-goal-icon.png',
+    							class: "dashboard-new-goal-image") %>
+			</div>
+			<div class="dashboard-new-goal-info-col">
+				<div class="dashboard-goal-name">
+					Setup a new savings goal
+				</div>
+			</div>
+		<% end %>	
 	</div>
+
 
 	<div class="centered">
 		<%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"sign-out-link" %>
 	</div>
+
 <% else %>
 	<div class="splash-page">
 	<h1>Welcome to Savvy</h1>
