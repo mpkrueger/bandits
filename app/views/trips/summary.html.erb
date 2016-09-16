@@ -18,15 +18,15 @@
 </div>
 
 <div class="centered main-content">
-
-	<div class="section-header">TRIP TO <%= @trip.place.upcase %>
-		<br /><%= @trip.date.strftime("%B").upcase %> 2017
+	<%= link_to edit_trip_path do %>
+	<div class="goal-header-info">Trip to <%= @trip.place %>
+		<br /><%= @trip.date.strftime("%B %Y") %> 
 		<br /><%= @trip.duration %>-day trip
 	</div>
+	<% end %>
 
-
-	<div class="section-header">ESTIMATED COSTS </div>
-	<p class="big-cost">$<%= @total_cost %></p>
+	<div class="section-header">You should start setting aside: </div>
+	<p class="big-cost">$<%= @monthly_savings_goal %> monthly</p>
 
 	<div class="row">
 		<div class="left-column-2">Flights:</div>
@@ -54,6 +54,24 @@
 			<% end %>
 		</div>
 	</div>
+
+	<div class="row">
+		<div class="left-column-2">Total Estimate: </div>
+		<div class="right-column-2">
+			$<%= @total_cost %>
+		</div>
+
+	</div>
+
+	<div class="row">
+		<div class="left-column-2">Months Left: </div>
+		<div class="right-column-2">
+			<%= @months_left %>
+		</div>
+
+	</div>
+
+
 <hr class="hr-goals"/>
 	<div class="section-header">TO-DOS </div>
 	<% if @goal.to_dos.empty? %>

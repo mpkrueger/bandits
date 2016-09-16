@@ -10,6 +10,8 @@ class DashboardController < ApplicationController
 		  	if(goal.trips.present?)
 		  		@trip = goal.trips.first
 		  		@tripcost =  @trip.flight_cost + (@trip.hotel_cost * @trip.duration) + (@trip.fun_cost * @trip.duration)
+    			@monthly_savings_goal = @tripcost/((@trip.date.year * 12 + @trip.date.month) - (DateTime.now.year*12 + DateTime.now.month))
+
 
 		  		# image search
 			    @image_options = {}
