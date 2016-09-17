@@ -14,8 +14,6 @@ class InviteMailer < ApplicationMailer
     @subject = @user.first_name + " invites you to join Savvy to set up savings goals together" 
 
     mail(to: @invite.email, subject: @subject)
-
-    # @new_reg_url = new_user_registration_url(:invite_token => @invite.token)
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml

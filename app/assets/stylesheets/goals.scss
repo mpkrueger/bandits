@@ -88,3 +88,20 @@
 .goal-header-info{
 	font-size:18px;
 }
+
+.image-chooser{
+	width: 100%;
+	column-count: 2;
+	margin-left: 5%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.image-title{
+	font-size: 28px;
+	text-align: center;
+}
+
+ul.thumbnails.image_picker_selector li {
+    margin: 0px 12px 12px 0px;
+}

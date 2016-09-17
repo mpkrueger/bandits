@@ -69,17 +69,14 @@ class TripsController < ApplicationController
         @images.push result
       end
     end
-    
-    @image1 = @images[0].link
-    @image2 = @images[1].link
-    @image3 = @images[2].link
-    @image4 = @images[3].link
 
     @image_links = []
 
     @images.each do |image|
       @image_links.push image.link
     end
+
+    @image_links = @image_links.first(6)
   end
 
   def savings_feedback
