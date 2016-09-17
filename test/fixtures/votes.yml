@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  voting_for: MyString
+  want_this: false
+  comment: MyText
+  : MyString
+  user: one
+
+two:
+  voting_for: MyString
+  want_this: false
+  comment: MyText
+  : MyString
+  user: two

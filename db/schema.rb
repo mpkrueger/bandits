@@ -10,11 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160916215351) do
+ActiveRecord::Schema.define(version: 20160917042920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "hstore"
 
   create_table "colleges", force: :cascade do |t|
     t.integer  "goal_id"
@@ -178,6 +177,16 @@ ActiveRecord::Schema.define(version: 20160916215351) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "votes", force: :cascade do |t|
+    t.string   "voting_for"
+    t.boolean  "want_this",  default: false
+    t.text     "comment"
+    t.integer  "user_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["user_id"], name: "index_votes_on_user_id", using: :btree
+  end
+
   add_foreign_key "colleges", "goals"
   add_foreign_key "comments", "goals"
   add_foreign_key "comments", "topics"
@@ -195,4 +204,5 @@ ActiveRecord::Schema.define(version: 20160916215351) do
   add_foreign_key "topics", "users"
   add_foreign_key "trips", "goals"
   add_foreign_key "users", "families"
+  add_foreign_key "votes", "users"
 end
