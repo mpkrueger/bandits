@@ -7,23 +7,9 @@
 			</div> 
 		<% end %>
 		<div class="nav-title">
-			Choose a picture
+			Plan a trip
 		</div>
 	</div>
-
-	<%= form_for @trip do |f| %>
-		<div class="image-container">
-<!-- 			<%= image_tag(@image1, class: "img-responsive") %>
-			<%= image_tag(@image2, class: "img-responsive") %>
-			<%= image_tag(@image3, class: "img-responsive") %>
-			<%= image_tag(@image4, class: "img-responsive") %> -->
-
-			<%= f.select :image, @image_links.map { |i| [i, {'data-img-src' => i}] } %>
-
-		</div>
-
-		<%= f.submit "Next" %>
-	<% end %>
 
 	<script type="text/javascript">
 	
@@ -31,6 +17,25 @@
 			$("select").imagepicker()
 		});
 	</script>
+
+	<div class="main-content">
+		<p>
+				<div class="image-title">
+					Choose a picture for your trip
+				</div>
+		</p>
+
+		<%= form_for @trip do |f| %>
+			<div class="image-chooser">
+				<%= f.select :image, @image_links.map { |i| [i, {'data-img-src' => i}] } %>
+
+			</div>
+			<div class="centered">
+			<%= f.submit "Next", class: 'next-button' %>
+			</div>
+		<% end %>
+
+	</div>
 
 </body>
 

@@ -103,7 +103,6 @@
 	font-size:18px;
 }
 
-
 .goal-image-col{
 	width:32%;
 	height:80px;
@@ -122,4 +121,21 @@
     width: 50%;
     margin-left:4%;
     float:left;
+}
+
+.image-chooser{
+	width: 100%;
+	column-count: 2;
+	margin-left: 5%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.image-title{
+	font-size: 28px;
+	text-align: center;
+}
+
+ul.thumbnails.image_picker_selector li {
+    margin: 0px 12px 12px 0px;
 }
