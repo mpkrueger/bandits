@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :topics
   resources :comments
   resources :feedbacks
+  resources :votes
   resources :invites
   resources :custom_goals
   resources :retirements

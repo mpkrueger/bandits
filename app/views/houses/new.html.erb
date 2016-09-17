@@ -1,2 +1,13 @@
 <h1>We're working on this area!</h1>
 
+<%= form_for @vote do |f| %>
+	
+	<%= f.hidden_field :voting_for, value: "new house" %>
+
+	<%= f.check_box :want_this %> "I'd like to vote for you to work on this next!"
+
+	<%= f.text_field :comment, placeholder: "Any other comments" %>
+
+	<%= f.submit "Go back" %>
+
+<% end %>
