@@ -1,7 +1,4 @@
 <% if @to_do.valid? %>
 	$('.js-to_dos').prepend("<%= escape_javascript(render(@to_do)) %>");
-	<% @to_do = ToDo.new %>
-	$('.new-to_do').html("<%= escape_javascript(render partial: 'to_dos/form', locals: { to_do: @to_do, goal_id: @goal_id }) %>");
-<% else %>
-	$('.new-to_do').html("<%= escape_javascript(render partial: 'to_dos/form', locals: { to_do: @to_do, goal_id: @goal_id }) %>");
 <% end %>
+$('.new-to_do').html("<%= escape_javascript(render partial: 'to_dos/form', locals: { goal_id: @goal_id }) %>");

@@ -7,7 +7,8 @@ class ToDosController < ApplicationController
   	@to_do = ToDo.new(todo_params)
   	@to_do.user = current_user
   	@to_do.goal = Goal.find_by_id(params[:to_do][:goal_id].to_i)
-  	if @to_do.save
+  	@goal_id = @to_do.goal.id
+    if @to_do.save
   	else
   		flash[:error] = "uh oh"
   	end

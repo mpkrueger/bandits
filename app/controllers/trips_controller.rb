@@ -37,7 +37,6 @@ class TripsController < ApplicationController
     @total_cost = @trip.flight_cost + (@trip.hotel_cost * @trip.duration) + (@trip.fun_cost * @trip.duration)
     @comment = Comment.new
     @comments = @goal.comments
-    @to_do = ToDo.new
     @to_dos = @goal.to_dos
     @monthly_savings_goal = @total_cost/((@trip.date.year * 12 + @trip.date.month) - (DateTime.now.year*12 + DateTime.now.month))
     @months_left = (@trip.date.year * 12 + @trip.date.month) - (DateTime.now.year*12 + DateTime.now.month)
