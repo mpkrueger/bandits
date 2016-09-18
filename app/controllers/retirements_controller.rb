@@ -1,5 +1,7 @@
 class RetirementsController < ApplicationController
   def new
+  	@retirement = Retirement.new
+  	@vote = Vote.new
   end
 
   def show
