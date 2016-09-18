@@ -1,2 +1,38 @@
-<h1>Retirements#new</h1>
-<p>Find me in app/views/retirements/new.html.erb</p>
+<body class="page-background">
+
+	<div class="heading">
+		 <%= link_to root_path do %>
+			<div class="home-icon">
+				<%= "\u{27F0}" %>
+			</div> 
+		<% end %>
+		<div class="nav-title">
+			Save for retirement
+		</div>
+	</div>
+
+	<div class="main-content">
+
+		<h1>We're working on this area...</h1>
+
+		<%= form_for @vote do |f| %>
+			
+			<%= f.hidden_field :voting_for, value: "retirement" %>
+
+			<p class="centered"><%= f.check_box :want_this %> I'd like to vote for you to work on this next!</p>
+
+			<br \>
+
+			<p class="centered"><%= f.text_field :comment, placeholder: "Any other comments" %></p>
+
+			<br \>
+
+			<div class="centered">
+				<%= f.submit "Go back", class: 'next-button' %>
+			</div>
+			
+
+		<% end %>
+
+	</div>
+</body>
